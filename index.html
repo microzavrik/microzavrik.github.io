@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.pinimg.com/originals/d2/4c/fc/d24cfc885247ed7133e7b84b58b72aee.gif"
+        type="image/x-icon">
     <style>
         body {
-            background-image: url();
+            background-image: url("https://i.pinimg.com/originals/01/38/11/013811d63121a093c32714cbbeeea0d0.gif");
             background-size: cover;
             color: #fff;
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #212020;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* фон не будет повторяться */
+            background-attachment: fixed;
+            /* фон будет фиксированным */
+        }
+
+        .social-icons {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icons a {
+            display: block;
+            margin-right: 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            /* Измените размер иконок по вашему желанию */
+            height: auto;
         }
 
         header {
             padding: 20px 0;
-            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон в шапке */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Полупрозрачный черный фон в шапке */
         }
 
         .container {
@@ -28,7 +55,8 @@
         }
 
         .repo {
-            background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон для блока репозитория */
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Полупрозрачный черный фон для блока репозитория */
             padding: 10px;
             border-radius: 8px;
             margin: 10px;
@@ -45,26 +73,22 @@
         }
 
         a:hover {
-            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон при наведении */
-        }
-
-        .blur-background {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('background.jpg');
-            filter: blur(5px); /* Реальное размытие заднего фона */
-            z-index: -1;
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Полупрозрачный белый фон при наведении */
         }
     </style>
-    <title>Мое портфолио</title>
+    <title>microzavrik portfolio</title>
 </head>
+
 <body>
-    <div class="blur-background"></div>
+    <div class="social-icons">
+        <a href="https://github.com/microzavrik" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"></a>
+        <a href="https://t.me/microzavrik" target="_blank"><img src="https://tantos-ekb.ru/uploadedFiles/images/1636144547_31-papik-pro-p-logotip-telegramma-foto-32.png" alt="Telegram"></a>
+        <a href="microbebr1k" target="_blank"><img src="https://seeklogo.com/images/D/discord-black-logo-733DD6B9B0-seeklogo.com.png" alt="Discord"></a>
+
+    </div>
     <header>
-        <h1>Welcome to my portfolio!</h1>
+        <h1>Microzavrik Portfolio</h1>
     </header>
     <div class="container">
         <div class="repo">
@@ -77,7 +101,8 @@
             <a href="https://github.com/microzavrik/form_bot" target="_blank">Form Request Bot 🔖</a>
         </div>
         <div class="repo">
-            <a href="https://github.com/microzavrik/multi-lingual-info-bot" target="_blank">Multi Lingual Info Bot 📚</a>
+            <a href="https://github.com/microzavrik/multi-lingual-info-bot" target="_blank">Multi Lingual Info Bot
+                📚</a>
         </div>
         <div class="repo">
             <a href="https://github.com/microzavrik/weather-tg-bot" target="_blank">Weather Bot 🌤</a>
@@ -87,4 +112,5 @@
         </div>
     </div>
 </body>
+
 </html>
