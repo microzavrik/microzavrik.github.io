@@ -8,7 +8,7 @@
         type="image/x-icon">
     <style>
         body {
-            background-image: url("https://i.pinimg.com/originals/01/38/11/013811d63121a093c32714cbbeeea0d0.gif");
+            background-image: url("https://i.pinimg.com/originals/4a/d1/31/4ad131960c66f47c11154ae3d3fd668c.gif");
             background-size: cover;
             color: #fff;
             font-family: Arial, sans-serif;
@@ -25,42 +25,62 @@
         .social-icons {
             position: absolute;
             top: 10px;
-            left: 10px;
+            right: 10px;
             display: flex;
             align-items: center;
         }
 
         .social-icons a {
             display: block;
-            margin-right: 10px;
+            margin-left: 10px;
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
         }
 
         .social-icons img {
             width: 30px;
-            /* Измените размер иконок по вашему желанию */
             height: auto;
         }
 
         header {
-            padding: 20px 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            padding: 40px 0;
+            background-color: rgba(0, 0, 0, 0.7);
             /* Полупрозрачный черный фон в шапке */
+        }
+
+        h1 {
+            font-size: 32px;
+            background: -webkit-linear-gradient(#eee, #731d0e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 20px;
         }
 
         .repo {
             background-color: rgba(0, 0, 0, 0.7);
             /* Полупрозрачный черный фон для блока репозитория */
-            padding: 10px;
+            padding: 20px;
             border-radius: 8px;
             margin: 10px;
             max-width: 300px;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 10px;
         }
 
         a {
@@ -77,40 +97,62 @@
             /* Полупрозрачный белый фон при наведении */
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>microzavrik portfolio</title>
 </head>
-
 <body>
     <div class="social-icons">
-        <a href="https://github.com/microzavrik" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"></a>
-        <a href="https://t.me/microzavrik" target="_blank"><img src="https://tantos-ekb.ru/uploadedFiles/images/1636144547_31-papik-pro-p-logotip-telegramma-foto-32.png" alt="Telegram"></a>
-        <a href="microbebr1k" target="_blank"><img src="https://seeklogo.com/images/D/discord-black-logo-733DD6B9B0-seeklogo.com.png" alt="Discord"></a>
-
+        <a href="https://t.me/microzavrik" target="_blank"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/telegram-white-icon.png"
+            alt="Telegram"></a>
     </div>
     <header>
         <h1>Microzavrik Portfolio</h1>
     </header>
-    <div class="container">
-        <div class="repo">
-            <a href="https://github.com/microzavrik/tg_control_bot" target="_blank">Telegram Control PC Bot 🤖</a>
-        </div>
-        <div class="repo">
-            <a href="https://github.com/microzavrik/shopping_bot" target="_blank">Shopping Bot 🏪</a>
-        </div>
-        <div class="repo">
-            <a href="https://github.com/microzavrik/form_bot" target="_blank">Form Request Bot 🔖</a>
-        </div>
-        <div class="repo">
-            <a href="https://github.com/microzavrik/multi-lingual-info-bot" target="_blank">Multi Lingual Info Bot
-                📚</a>
-        </div>
-        <div class="repo">
-            <a href="https://github.com/microzavrik/weather-tg-bot" target="_blank">Weather Bot 🌤</a>
-        </div>
-        <div class="repo">
-            <a href="https://github.com/microzavrik/parser-bot" target="_blank">Parsing/Realtime bot 📈</a>
-        </div>
+    <div class="container" id="projects-container">
+        <!-- Project descriptions will be dynamically added here -->
     </div>
-</body>
+    <script>
+        // Sample data for projects
+        var projects = [{
+                title: "Telegram Control PC Bot 🤖",
+                description: "A bot that allows you to control your PC remotely using Telegram.",
+                link: "https://github.com/microzavrik/tg_control_bot"
+            },
+            {
+                title: "Shopping Bot 🏪",
+                description: "A bot for managing shopping lists and tracking purchases.",
+                link: "https://github.com/microzavrik/shopping_bot"
+            },
+            {
+                title: "Form Request Bot 🔖",
+                description: "A bot that handles form requests and collects user information.",
+                link: "https://github.com/microzavrik/form_bot"
+            },
+            {
+                title: "Multi Lingual Info Bot 📚",
+                description: "A bot that provides multilingual information on various topics.",
+                link: "https://github.com/microzavrik/multi-lingual-info-bot"
+            },
+            {
+                title: "Weather Bot 🌤",
+                description: "A bot that provides weather information for specified locations.",
+                link: "https://github.com/microzavrik/weather-tg-bot"
+            },
+            {
+                title: "Parsing/Realtime Bot 📈",
+                description: "A bot for parsing data and providing real-time updates.",
+                link: "https://github.com/microzavrik/parser-bot"
+            }
+        ];
 
+        // Dynamically create project elements using JavaScript
+        $(document).ready(function() {
+            projects.forEach(function(project) {
+                var projectElement = "<div class='repo'><h2>" + project.title + "</h2><p>" + project.description + "</p><a href='" + project.link +
+                    "' target='_blank'>View Repository</a></div>";
+                $('#projects-container').append(projectElement);
+            });
+        });
+    </script>
+</body>
 </html>
