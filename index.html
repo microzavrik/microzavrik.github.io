@@ -8,17 +8,18 @@
         type="image/x-icon">
     <style>
         body {
-    background-image: url("https://i.pinimg.com/originals/4a/d1/31/4ad131960c66f47c11154ae3d3fd668c.gif");
-    background-size: cover;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+            background-image: url("https://i.pinimg.com/originals/4a/d1/31/4ad131960c66f47c11154ae3d3fd668c.gif");
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            backdrop-filter: blur(10px);
+        }
 
         .social-icons {
             position: absolute;
@@ -44,7 +45,6 @@
         header {
             padding: 40px 0;
             background-color: rgba(0, 0, 0, 0.7);
-            /* Полупрозрачный черный фон в шапке */
         }
 
         h1 {
@@ -63,15 +63,48 @@
         }
 
         .repo {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 8px;
-    margin: 10px;
-    width: 300px; /* Set a fixed width for all repository blocks */
-    height: 200px; /* Set a fixed height for all repository blocks */
-    box-sizing: border-box; /* Ensure the border is included in the block size */
-    border: 2px solid white;
-}
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px;
+            width: 300px;
+            height: 200px;
+            box-sizing: border-box;
+            border: 2px solid white;
+            position: relative;
+        }
+
+        .language-label {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #fff;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .language-label.python {
+            background-color: #3776ab;
+            color: #fff;
+        }
+
+        .language-label.vue {
+            background-color: #42b883;
+            color: #fff;
+        }
+
+        .language-label.typescript {
+            background-color: #007acc;
+            color: #fff;
+        }
+
+        .language-label.nestjs {
+            background-color: #e0234e;
+            color: #fff;
+        }
 
         h2 {
             margin-top: 0;
@@ -94,7 +127,6 @@
 
         a:hover {
             background-color: rgba(255, 255, 255, 0.1);
-            /* Полупрозрачный белый фон при наведении */
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -116,32 +148,50 @@
         var projects = [{
                 title: "Telegram Control PC Bot 🤖",
                 description: "A bot that allows you to control your PC remotely using Telegram.",
-                link: "https://github.com/microzavrik/tg_control_bot"
+                link: "https://github.com/microzavrik/tg_control_bot",
+                language: "Python"
             },
             {
                 title: "Shopping Bot 🏪",
                 description: "A bot for managing shopping lists and tracking purchases.",
-                link: "https://github.com/microzavrik/shopping_bot"
+                link: "https://github.com/microzavrik/shopping_bot",
+                language: "Python"
             },
             {
                 title: "Form Request Bot 🔖",
                 description: "A bot that handles form requests and collects user information.",
-                link: "https://github.com/microzavrik/form_bot"
+                link: "https://github.com/microzavrik/form_bot",
+                language: "Python"
             },
             {
                 title: "Multi Lingual Info Bot 📚",
                 description: "A bot that provides multilingual information on various topics.",
-                link: "https://github.com/microzavrik/multi-lingual-info-bot"
+                link: "https://github.com/microzavrik/multi-lingual-info-bot",
+                language: "Python"
             },
             {
                 title: "Weather Bot 🌤",
                 description: "A bot that provides weather information for specified locations.",
-                link: "https://github.com/microzavrik/weather-tg-bot"
+                link: "https://github.com/microzavrik/weather-tg-bot",
+                language: "Python"
             },
             {
                 title: "Parsing/Realtime Bot 📈",
                 description: "A bot for parsing data and providing real-time updates.",
-                link: "https://github.com/microzavrik/parser-bot"
+                link: "https://github.com/microzavrik/parser-bot",
+                language: "Python"
+            },
+            {
+                title: " MBF CRM System 💼",
+                description: "Lightweight CRM system with beautiful design",
+                link: "https://github.com/microzavrik/mbf_crm",
+                language: "Vue"
+            },
+            {
+                title: "ToDo List WebSite 📋",
+                description: "Simple ToDo List pet-project",
+                link: "https://github.com/microzavrik/mbf_todolist",
+                language: "TypeScript"
             }
         ];
 
@@ -149,7 +199,7 @@
         $(document).ready(function() {
             projects.forEach(function(project) {
                 var projectElement = "<div class='repo'><h2>" + project.title + "</h2><p>" + project.description + "</p><a href='" + project.link +
-                    "' target='_blank'>View Repository</a></div>";
+                    "' target='_blank'>View Repository</a><div class='language-label " + project.language.toLowerCase() + "'>" + project.language + "</div></div>";
                 $('#projects-container').append(projectElement);
             });
         });
