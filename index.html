@@ -8,19 +8,17 @@
         type="image/x-icon">
     <style>
         body {
-            background-image: url("https://i.pinimg.com/originals/4a/d1/31/4ad131960c66f47c11154ae3d3fd668c.gif");
-            background-size: cover;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-position: center;
-            background-repeat: no-repeat;
-            /* фон не будет повторяться */
-            background-attachment: fixed;
-            /* фон будет фиксированным */
-        }
+    background-image: url("https://i.pinimg.com/originals/4a/d1/31/4ad131960c66f47c11154ae3d3fd668c.gif");
+    background-size: cover;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
         .social-icons {
             position: absolute;
@@ -65,13 +63,15 @@
         }
 
         .repo {
-            background-color: rgba(0, 0, 0, 0.7);
-            /* Полупрозрачный черный фон для блока репозитория */
-            padding: 20px;
-            border-radius: 8px;
-            margin: 10px;
-            max-width: 300px;
-        }
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
+    width: 300px; /* Set a fixed width for all repository blocks */
+    height: 200px; /* Set a fixed height for all repository blocks */
+    box-sizing: border-box; /* Ensure the border is included in the block size */
+    border: 2px solid white;
+}
 
         h2 {
             margin-top: 0;
